@@ -1,0 +1,31 @@
+spring:
+    cloud:
+        stream:
+            bindings:
+                process-created:
+                    content-type: application/json
+                    destination: process-created
+                process-created-handler:
+                    consumer:
+                        concurrency: 4
+                    content-type: application/json
+                    destination: process-created
+                    group: application
+                process-ended:
+                    content-type: application/json
+                    destination: process-ended
+                process-ended-handler:
+                    consumer:
+                        concurrency: 4
+                    content-type: application/json
+                    destination: process-ended
+                    group: application
+                process-updated:
+                    content-type: application/json
+                    destination: process-updated
+                process-updated-handler:
+                    consumer:
+                        concurrency: 4
+                    content-type: application/json
+                    destination: process-updated
+                    group: application
